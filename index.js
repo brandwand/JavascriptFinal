@@ -2,10 +2,8 @@ var express = require('express'),
 var bcrypt = require('bcrypt-nodejs'),
 pug = require('pug'),
 path = require('path'),
-menu = require('./menu.json');
 route = require('./routes/routes.js');
 bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 
 
 
