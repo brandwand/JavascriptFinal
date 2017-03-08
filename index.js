@@ -3,8 +3,17 @@ var bcrypt = require('bcrypt-nodejs'),
 pug = require('pug'),
 path = require('path'),
 menu = require('./menu.json');
-var hash;
+route = require('./routes/routes.js');
+bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
+
+
+
+
+//Example from BCRIPT DEMO
+/////////////////////////////////////////////////////////////
+var hash;
 bcrypt.hash("bacon", null, null, function (err, hash) {
     // Store hash in your password DB.
     console.log(hash);
@@ -17,7 +26,10 @@ bcrypt.hash("bacon", null, null, function (err, hash) {
         console.log(res);
     });
 });
+//////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////
+// Example from Burger Project
 var app = express();
 
 app.set('view engine', 'pug');
@@ -37,7 +49,7 @@ app.get('/', function(req, res){
 app.get('/:viewname', function(req, res){
     res.render(req.params.viewname, menu);
 });
-
+////////////////////////////////////////////////////////////////////////////
 
 
 app.listen(3000);
