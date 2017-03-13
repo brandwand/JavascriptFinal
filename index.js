@@ -1,9 +1,11 @@
-var express = require('express'),
-var bcrypt = require('bcrypt-nodejs'),
+express = require('express'),
+bcrypt = require('bcrypt-nodejs'),
 pug = require('pug'),
 path = require('path'),
 route = require('./routes/routes.js');
 bodyParser = require('body-parser');
+cookie = require('cookie-sessions');
+sessions = require('express-sessions');
 
 
 
@@ -40,12 +42,12 @@ app.get('/', function(req, res){
 
 
  app.get('/:viewname', function(req, res){
-     res.render(req.params.viewname, menu);
+     res.render(req.params.viewname);
  });
 
 
 app.get('/:viewname', function(req, res){
-    res.render(req.params.viewname, menu);
+    res.render(req.params.viewname);
 });
 ////////////////////////////////////////////////////////////////////////////
 
