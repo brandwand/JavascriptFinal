@@ -1,0 +1,109 @@
+html {
+   
+    background:whitesmoke;
+    color: black;
+   font-family: 'Pangolin', cursive;
+}
+
+body {
+    width: 80%;
+    background: #fafac6;
+    color: black;
+    padding: 50px 0px 150px 0px;
+    margin: 25px auto;   
+    text-align: center;
+}
+
+#image {
+   transition: width 2s linear 1s;
+   margin-top: 30px;
+   border-style: solid;
+   border-color: #000;
+}
+#image:hover {
+    width : 300px;
+    height: 320px;
+    border-style: solid; 
+    border-color: #D40015;
+    border-width: 6px;
+}
+
+header {
+    background:#bac0ac ;
+    color: #fff;
+    height: 50px;
+    width: auto;
+    text-align: center;
+    padding: 5px;
+    color: black;
+    font-family: 'Pacifico', cursive;
+    
+}
+
+ h1 {
+       
+        align-self: center;
+        text-align: center;
+        color: black;
+        font-family: 'Pacifico', cursive;
+
+    }
+
+images{ 
+       
+     align-self: center;
+     padding: 2px;
+}
+nav li {
+    
+    display: inline-block;    
+    width: 80px;
+    margin-bottom: 5px;
+    margin-right: 40px;
+    padding: 5px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    border-right: 1px #D40015;
+}
+
+li a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:link{
+    color: black;
+}
+a:visited{
+    color:black
+}
+
+nav :hover {
+    color: #D40015;
+}
+footer {
+        margin: 50px, 0px, 50px, 0px;
+         background:#bac0ac ;
+        text-align: center;
+}
+
+#username {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+#submit {
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
