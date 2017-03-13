@@ -1,11 +1,11 @@
-express = require('express'),
-bcrypt = require('bcrypt-nodejs'),
-pug = require('pug'),
-path = require('path'),
-route = require('./routes/routes.js');
-bodyParser = require('body-parser');
-cookie = require('cookie-sessions');
-sessions = require('express-sessions');
+var express = require('express');
+var bcrypt = require('bcrypt-nodejs');
+var pug = require('pug');
+var path = require('path');
+var route = require('./routes/routes.js');
+var bodyParser = require('body-parser');
+var cookie = require('cookie-sessions');
+var sessions = require('express-sessions');
 
 
 
@@ -17,19 +17,16 @@ var hash;
 bcrypt.hash("bacon", null, null, function (err, hash) {
     // Store hash in your password DB.
     console.log(hash);
-    bcrypt.compare("bacon", hash, function (err, res) {
+    bcrypt.compare("psw", hash, function (err, res) {
         console.log(res);
         // res == true
     });
-    bcrypt.compare("veggies", hash, function (err, res) {
+    bcrypt.compare("bacon", hash, function (err, res) {
         // res = false
         console.log(res);
     });
 });
 //////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////
-// Example from Burger Project
 var app = express();
 
 app.set('view engine', 'pug');
@@ -44,12 +41,5 @@ app.get('/', function(req, res){
  app.get('/:viewname', function(req, res){
      res.render(req.params.viewname);
  });
-
-
-app.get('/:viewname', function(req, res){
-    res.render(req.params.viewname);
-});
-////////////////////////////////////////////////////////////////////////////
-
 
 app.listen(3000);
