@@ -1,28 +1,27 @@
-extends layout
-block content
-    h3 Customer Details
-    form(id='form', method='post', action='/create')
-        label(for='name') Name: 
-        input(type='text', name='name')
-        br
-        label(for='age') Age: 
-        input(type='text', name='age')
-        br
-        label(for='email') Email: 
-        input(type='text', name='email')
-        br
-        label(for='username') Username: 
-        input(type='text', name='username')
-        br
-        label(for='password') Password: 
-        input(type='text', name='password')
-        br
-        label(for='user-level') User-Level: 
-        input(type='text', name='user-level')
-        br
-        label(for='answers') Answers: 
-        input(type='text', name='answers')
-        br
-
-        br
-        input(type='submit', value='Add Person') 
+doctype
+html
+    head
+        title Add new person
+        link(rel='stylesheet', href='/css/style.css')
+    body
+        h3 Customer Details
+        form(id='form', method='post', action='/create')
+            label(for='name') Name: 
+            input(type='text', name='name')
+            br
+            label(for='age') Age: 
+            input(type='text', name='age')
+            br
+            label(for='email') Email: 
+            input(type='text', name='email')
+            br
+            label(for='username') Username: 
+            input(type='text', name='username')
+            br
+            label(for='password') Password: 
+            input(type='password', name='password')
+            br
+            label(for='userLevel') User-Level: 
+            input(type='text', name='userLevel')
+            br
+            input(type='submit', value='Add Person') 
