@@ -80,6 +80,10 @@ exports.details = function (req, res) {
     });
 };
 
+exports.questions = function(req,res){
+    res.render('questions');
+}
+
 var bcrypt = require('bcrypt-nodejs'),
     hash;
 bcrypt.hash(personSchema.username, null, null, function (err, hash) {
