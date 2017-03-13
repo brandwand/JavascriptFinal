@@ -1,0 +1,35 @@
+extends layout
+title Edit Person
+block content
+     form(id='form', method='post', action='/edit/' + person.id)
+            label(for='name') Name: 
+            input(type='text', name='name' value=person.name)
+            br
+            label(for='age') Age: 
+            input(type='text', name='age' value=person.age)
+            br
+           label(for='email') Email: 
+            input(type='text', name='email' value=person.email)
+            br
+            label(for='username') Username: 
+            input(type='text', name='username' value=person.username)
+            br
+            label(for='password') Password: 
+            input(type='text', name='age' value=person.password)
+            br
+            label(for='user-level') User-Level: 
+            input(type='text', name='user-level' value=person.user-level)
+            br
+            label(for='answers') Answers: 
+            input(type='text', name='answers' value=person.answers)
+            br
+            input(type='submit', value='Update Person')
+
+
+//-   p Name: #{person.name}
+//-         p Age: #{person.age}
+//-         p email: #{person.email}
+//-         p Username: #{person.username}
+//-         p password: #{person.password}
+//-         p User-Level: #{person.user-level}
+//-         p answers:#{answers}

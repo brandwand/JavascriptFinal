@@ -1,3 +1,41 @@
 extends layout
+title= title
+block content
+    h3 List of People
 
-            
+    table(class='gridtable')
+        tr
+            th Id
+            th Name
+            th Age
+            th Species
+            th 
+            th 
+        each item in people
+            tr
+                td
+                    a(href='/details/' + item.id) #{item.id}
+                td #{item.name}
+                td #{item.age}
+                td #{item.email}
+                td #{item.username}
+                td #{item.password}
+                td #{item.user-level}
+                td #{item.answers}
+                td
+                    a(href='/edit/' + item.id) Edit
+                td
+                    a(href='/delete/' + item.id) Delete
+
+        p
+        #menu
+            a(href='/create') Add new person
+
+
+            //-   p Name: #{person.name}
+//-         p Age: #{person.age}
+//-         p email: #{person.email}
+//-         p Username: #{person.username}
+//-         p password: #{person.password}
+//-         p User-Level: #{person.user-level}
+//-         p answers:#{answers}
