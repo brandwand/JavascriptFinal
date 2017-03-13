@@ -1,8 +1,8 @@
 var express = require('express'),
-var bcrypt = require('bcrypt-nodejs'),
+bcrypt = require('bcrypt-nodejs'),
 pug = require('pug'),
 path = require('path'),
-route = require('./routes/routes.js');
+route = require('./routes/routes.js'),
 bodyParser = require('body-parser');
 
 
