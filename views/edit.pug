@@ -1,7 +1,9 @@
-extends layout
-title Edit Person
-block content
-     form(id='form', method='post', action='/edit/' + person.id)
+doctype
+html
+    head
+        title Edit Person
+    body
+        form(id='form', method='post', action='/edit/' + person.id)
             label(for='name') Name: 
             input(type='text', name='name' value=person.name)
             br
@@ -17,19 +19,13 @@ block content
             label(for='password') Password: 
             input(type='text', name='age' value=person.password)
             br
-            label(for='user-level') User-Level: 
-            input(type='text', name='user-level' value=person.user-level)
+            label(for='userLevel') User-Level: 
+            input(type='text', name='userLevel' value=person.userLevel)
             br
-            label(for='answers') Answers: 
-            input(type='text', name='answers' value=person.answers)
-            br
+            //- label(for='answers') Answers: 
+            //- input(type='text', name='answers' value=person.answers)
+            //- br
             input(type='submit', value='Update Person')
 
 
-//-   p Name: #{person.name}
-//-         p Age: #{person.age}
-//-         p email: #{person.email}
-//-         p Username: #{person.username}
-//-         p password: #{person.password}
-//-         p User-Level: #{person.user-level}
-//-         p answers:#{answers}
+
