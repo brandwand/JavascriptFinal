@@ -79,3 +79,18 @@ exports.details = function (req, res) {
         res.render('details', { title: 'People List', person: person });
     });
 };
+
+var bcrypt = require('bcrypt-nodejs'),
+    hash;
+bcrypt.hash(personSchema.username, null, null, function (err, hash) {
+    // Store hash in your password DB.
+    console.log(hash);
+    bcrypt.compare(personSchema.password, hash, function (err, res) {
+        console.log(res);
+        // res == true
+    });
+    bcrypt.compare(personSchema.username, hash, function (err, res) {
+        // res = false
+        console.log(res);
+    });
+});

@@ -7,22 +7,7 @@ var express = require('express'),
     cookie = require('cookie-sessions'),
     sessions = require('express-sessions');
 
-//Example from BCRIPT DEMO
-/////////////////////////////////////////////////////////////
-// var hash;
-// bcrypt.hash("bacon", null, null, function (err, hash) {
-//     // Store hash in your password DB.
-//     console.log(hash);
-//     bcrypt.compare("psw", hash, function (err, res) {
-//         console.log(res);
-//         // res == true
-//     });
-//     bcrypt.compare("bacon", hash, function (err, res) {
-//         // res = false
-//         console.log(res);
-//     });
-// });
-//////////////////////////////////////////////////////////////
+
 var app = express();
 
 app.set('view engine', 'pug');
@@ -36,7 +21,22 @@ app.get('/details/:id', route.details);
 app.post('/create', urlencodedParser, route.createPerson);
 app.post('/edit/:id', urlencodedParser, route.editPerson);
 app.get('/delete/:id', route.delete);
- 
+ //Example from BCRIPT DEMO
+/////////////////////////////////////////////////////////////
+// var hash;
+// bcrypt.hash(username, null, null, function (err, hash) {
+//     // Store hash in your password DB.
+//     console.log(hash);
+//     bcrypt.compare(password, hash, function (err, res) {
+//         console.log(res);
+//         // res == true
+//     });
+//     bcrypt.compare(username, hash, function (err, res) {
+//         // res = false
+//         console.log(res);
+//     });
+// });
+//////////////////////////////////////////////////////////////
 // app.get('/', function(req, res){
 //     res.render('index');
 // } );
