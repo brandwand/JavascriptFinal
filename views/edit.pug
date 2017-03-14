@@ -23,6 +23,33 @@ html
             label(for='userLevel') User-Level: 
             input(type='text', name='userLevel' value=person.userLevel)
             br
+            div(class='register-box')
+                label(for='answerQ1') What color is made when you mix blue and green?
+                br
+            select(name='answerQ1', class='answerQ1')
+                option(value="red") Yellow
+                option(value="blue") Magenta
+                option(value="green") Cyan
+                option(value="purple") Red
+            br
+            div(class='register-box')
+                label(for='answerQ2') What band has a song called 1958?
+                br
+            select(name='answerQ2', class='answerQ2')
+                option(value="red") A Day To Remember
+                option(value="blue") Beartooth
+                option(value="green") For Today
+                option(value="purple") The Ammity Affliction
+            br
+            div(class='register-box')
+                label(for='answerQ3') What is Brandon's favorite soda?
+                br
+            select(name='answerQ3', class='answerQ3')
+                option(value="red") Coke
+                option(value="blue") Sprite
+                option(value="green") Mountain Dew
+                option(value="purple") Pepsi
+            br
             //- label(for='answers') Answers: 
             //- input(type='text', name='answers' value=person.answers)
             //- br

@@ -9,6 +9,7 @@ var express = require('express'),
 
 
 var app = express();
+var dateCookie = "";
 // app.get('/:viewname', function (req, res) {
 //     res.render(req.params.viewname);
 // });
@@ -43,6 +44,15 @@ app.get('/logout', function (req, res) {
 
 app.use(express.static(path.join(__dirname + '/public')));
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.get('/', function (req, res){
+    if(req.cookies.dateCookie != ""){
+        res.send('Time page was last visited: ' + dateCookie);
+    } else{
+        dateCookie = Date().toUTCString();
+        res.cookie('timeLastVisited', dateCookie);
+        res.send('Welcome new user.');
+    }
+})
 app.get('/', route.index);
 app.get('/index', route.index);
 app.get('/create', route.create);
