@@ -14,13 +14,29 @@ var personSchema = mongoose.Schema({
     email: String,
     username: String,
     password: String,
-    userLevel: String
+    userLevel: String,
+    answerQ1: String,
+    answerQ2: String,
+    answerQ3: String
 });
 
 
 var Person = mongoose.model('People_Collection', personSchema);
 
+var yellowCount = 0;
+var magentaCount = 0;
+var cyanCount = 0;
+var redCount = 0;
 
+var adtrCount = 0;
+var bearCount = 0;
+var fortCount = 0;
+var tamaCount = 0;
+
+var cokeCount = 0;
+var spriteCount = 0;
+var mountainCount = 0;
+var pepsiCount = 0;
 
 exports.index = function (req, res) {
         res.render('index');
@@ -45,7 +61,7 @@ exports.create = function (req, res) {
 };
 
 exports.createPerson = function (req, res) {
-    var person = new Person({ name: req.body.name, age: req.body.age, email: req.body.email, username: req.body.username, password: req.body.password, userLevel: req.body.userLevel });
+    var person = new Person({ name: req.body.name, age: req.body.age, email: req.body.email, username: req.body.username, password: req.body.password, userLevel: req.body.userLevel, answerQ1: req.body.answerQ1, answerQ2: req.body.answerQ2, answerQ3: req.body.answerQ3});
     person.save(function (err, person) {
         if (err) return console.error(err);
         console.log(req.body.name + ' added');
@@ -90,10 +106,6 @@ exports.details = function (req, res) {
         res.render('details', { title: 'People List', person: person });
     });
 };
-
-exports.questions = function(req,res){
-    res.render('questions');
-}
 
 var bcrypt = require('bcrypt-nodejs'),
     hash;

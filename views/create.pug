@@ -21,8 +21,42 @@ html
             label(for='password') Password: 
             input(type='password', name='password')
             br
-            label(for='userLevel') User-Level: 
-            input(type='text', name='userLevel')
+            //label(for='userLevel') User-Level: 
+            //input(type='text', name='userLevel')
+            div(class='register-box')
+                label(for='userLevel') User Level
+                br
+            select(name='userLevel', class='userLevel')
+                option(value="user") user
+                option(value="admin") admin
+            br
+            div(class='register-box')
+                label(for='answerQ1') What color is made when you mix blue and green?
+                br
+            select(name='answerQ1', class='answerQ1')
+                option(value="Yellow") Yellow
+                option(value="Magenta") Magenta
+                option(value="Cyan") Cyan
+                option(value="Red") Red
+            br
+            div(class='register-box')
+                label(for='answerQ2') What band has a song called 1958?
+                br
+            select(name='answerQ2', class='answerQ2')
+                option(value="A Day To Remember") A Day To Remember
+                option(value="Beartooth") Beartooth
+                option(value="For Today") For Today
+                option(value="The Ammity Affliction") The Ammity Affliction
+            br
+            div(class='register-box')
+                label(for='answerQ3') What is Brandon's favorite soda?
+                br
+            select(name='answerQ3', class='answerQ3')
+                option(value="Coke") Coke
+                option(value="Sprite") Sprite
+                option(value="Mountain Dew") Mountain Dew
+                option(value="Pepsi") Pepsi
+            br
             br
             br
             input(type='submit', value='Add Person') 

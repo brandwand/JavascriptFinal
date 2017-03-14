@@ -26,7 +26,6 @@ app.post('/edit/:id', urlencodedParser, route.editPerson);
 app.get('/delete/:id', route.delete);
 app.get('/adminView', route.adminView);
 app.get('/userView', route.userView);
-app.get('/questions/', route.questions);
 
 
 //Example from BCRIPT DEMO
