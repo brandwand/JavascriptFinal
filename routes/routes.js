@@ -23,7 +23,7 @@ var Person = mongoose.model('People_Collection', personSchema);
 
 
 exports.index = function (req, res) {
-        if (err) return console.error(err);
+        // if (err) return console.error(err);
         res.render('index');
 };
 
