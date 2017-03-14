@@ -9,20 +9,27 @@ var express = require('express'),
 
 
 var app = express();
-
+// app.get('/:viewname', function (req, res) {
+//     res.render(req.params.viewname);
+// });
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname + '/public')));
-var urlencodedParser = bodyParser.urlencoded({ extended: true});
+var urlencodedParser = bodyParser.urlencoded({ extended: true });
 app.get('/', route.index);
+app.get('/index', route.index);
 app.get('/create', route.create);
 app.get('/edit/:id', route.edit);
 app.get('/details/:id', route.details);
 app.post('/create', urlencodedParser, route.createPerson);
 app.post('/edit/:id', urlencodedParser, route.editPerson);
 app.get('/delete/:id', route.delete);
-app.get('/questions/:id', route.questions);
- //Example from BCRIPT DEMO
+app.get('/adminView', route.adminView);
+app.get('/userView', route.userView);
+app.get('/questions/', route.questions);
+
+
+//Example from BCRIPT DEMO
 /////////////////////////////////////////////////////////////
 // var hash;
 // bcrypt.hash(username, null, null, function (err, hash) {
@@ -42,8 +49,6 @@ app.get('/questions/:id', route.questions);
 //     res.render('index');
 // } );
 
-//  app.get('/:viewname', function(req, res){
-//      res.render(req.params.viewname);
-//  });
+
 
 app.listen(3000);

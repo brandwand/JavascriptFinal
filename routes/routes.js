@@ -23,9 +23,20 @@ var Person = mongoose.model('People_Collection', personSchema);
 
 
 exports.index = function (req, res) {
+        res.render('index');
+};
+
+exports.adminView = function (req, res) {
     Person.find(function (err, person) {
         if (err) return console.error(err);
-        res.render('index', { title: 'People List', people: person });
+        res.render('adminView', { title: 'People List', people: person });
+    });
+};
+
+exports.userView = function (req, res) {
+    Person.find(function (err, person) {
+        if (err) return console.error(err);
+        res.render('userView', { title: 'People List', person: person });
     });
 };
 
@@ -39,7 +50,7 @@ exports.createPerson = function (req, res) {
         if (err) return console.error(err);
         console.log(req.body.name + ' added');
     });
-    res.redirect('/');
+    res.redirect('/adminView');
 };
 
 exports.edit = function (req, res) {
