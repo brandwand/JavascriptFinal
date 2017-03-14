@@ -9,6 +9,7 @@ var express = require('express'),
 
 
 var app = express();
+var dateCookie = "";
 // app.get('/:viewname', function (req, res) {
 //     res.render(req.params.viewname);
 // });
@@ -16,6 +17,15 @@ app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname + '/public')));
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
+app.get('/', function (req, res){
+    if(req.cookies.dateCookie != ""){
+        res.send('Time page was last visited: ' + dateCookie);
+    } else{
+        dateCookie = Date().toUTCString();
+        res.cookie('timeLastVisited', dateCookie);
+        res.send('Welcome new user.');
+    }
+})
 app.get('/', route.index);
 app.get('/index', route.index);
 app.get('/create', route.create);
@@ -26,6 +36,8 @@ app.post('/edit/:id', urlencodedParser, route.editPerson);
 app.get('/delete/:id', route.delete);
 app.get('/adminView', route.adminView);
 app.get('/userView', route.userView);
+app.use(cookieParser("Last time visited"));
+
 
 
 //Example from BCRIPT DEMO
