@@ -2,7 +2,7 @@ doctype
 html
     head
         title Add new person
-        link(rel='stylesheet', href='/css/style.css')
+        link(href='./css/style.css', rel='stylesheet')
     body
         h3 Customer Details
         form(id='form', method='post', action='/create')
@@ -26,4 +26,4 @@ html
             br
             br
             input(type='submit', value='Add Person') 
-        a(href="/")
+        a(href="/login") Login Page

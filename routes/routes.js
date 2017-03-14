@@ -23,8 +23,7 @@ var Person = mongoose.model('People_Collection', personSchema);
 
 
 exports.index = function (req, res) {
-        // if (err) return console.error(err);
-        res.render('index');
+    res.render('index');
 };
 
 exports.adminView = function (req, res) {
@@ -41,6 +40,10 @@ exports.userView = function (req, res) {
     });
 };
 
+exports.login = function (req, res) {
+    res.render('login');
+       
+}
 exports.create = function (req, res) {
     res.render('create');
 };
@@ -51,7 +54,7 @@ exports.createPerson = function (req, res) {
         if (err) return console.error(err);
         console.log(req.body.name + ' added');
     });
-    res.redirect('/adminView');
+    res.redirect('/login');
 };
 
 exports.edit = function (req, res) {
@@ -91,6 +94,10 @@ exports.details = function (req, res) {
         res.render('details', { title: 'People List', person: person });
     });
 };
+
+exports.questions = function (req, res) {
+    res.render('questions');
+}
 
 var bcrypt = require('bcrypt-nodejs'),
     hash;

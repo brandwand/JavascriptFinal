@@ -3,17 +3,26 @@ html
     head
         title Login
         link(href='/css/style.css', rel='stylesheet')
+        header
+            nav 
+                ul
+                    li
+                        a(href='index') Home
+                    li
+                        a(href='login') login
     body
         div(id="container")
-            label Username: 
-        
-            input(id="username" type="text" placeholder="Enter Username" name="uname" required)
+        form(method='post', action='/login')
+            label(for='username') Username (user): 
+            input(id="username" type="text" placeholder="Enter Username" name="username" required)
             br
-            label Password: 
+            label(for='password') Password (pass):
         
-            input(id="password" type="password" placeholder="Enter Password" name="psw" required)
+            input(id="password" type="password" placeholder="Enter Password" name="password" required)
             br
-            button(id="submit" type="submit") Login
+            input(type="submit", value='Enter')
             br
             a(href="/create") Create Account
             
+//-///////////////////////////////////////////////////////////////////////////
+            //-Login Page
