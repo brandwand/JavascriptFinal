@@ -4,7 +4,7 @@ var express = require('express'),
     path = require('path'),
     route = require('./routes/routes.js'),
     bodyParser = require('body-parser'),
-    cookie = require('cookie-sessions'),
+    cookie = require('cookie-parser'),
     sessions = require('express-sessions');
 
 
@@ -26,6 +26,7 @@ app.post('/edit/:id', urlencodedParser, route.editPerson);
 app.get('/delete/:id', route.delete);
 app.get('/adminView', route.adminView);
 app.get('/userView', route.userView);
+app.get('/questions/', route.questions);
 
 
 //Example from BCRIPT DEMO
